@@ -1,0 +1,40 @@
+.tweetButton {
+  font-family: 'Bungee';
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-size: 1em;
+  font-size: medium;
+  
+}
+
+hr{
+  border: 2px solid black;
+}
+
+.counter {
+  display: flex;
+  font-family: 'Bungee';
+  font-size: large;
+
+  
+  
+}
+
+.buttonCount{
+  display: flex;
+  justify-content: space-between;
+}
+
+#tweet-text{
+  background-color:inherit;
+  border: 0em;
+  justify-content: left;
+  font-weight: bold;
+  width: 864px;
+  height: 30px;
+  font-size: inherit;
+
+}
+.new-tweet {
+  width: 100%;
+}

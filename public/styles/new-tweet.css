@@ -38,3 +38,7 @@ hr{
 .new-tweet {
   width: 100%;
 }
+
+.minus-char{
+  color: red;
+}

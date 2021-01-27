@@ -10,6 +10,9 @@
 $(function() {
 
   function createTweetElement(tweetObj) {
+    const date = new Date(tweetObj.created_at);
+    const day = (Date.now() - date) / 1000 / 60 / 60 / 24;
+    const result = Math.floor(day);
     const article = `
    <article id ="tweet">
           <header>
@@ -27,7 +30,8 @@ $(function() {
           </div>
           <footer>
             <div class="time-ago">
-              <p> ${tweetObj.created_at} </p>
+
+              <p> ${result} Days ago </p>
             </div>
             <div class = "icons">
               <i style="font-size:24px" class="fa">&#xf11d;</i>
@@ -43,7 +47,9 @@ $(function() {
 
   const renderTweets = function(tweetData) {
   // loops through tweets
-    for (const tweetObj of tweetData) {
+  $('#tweet').html('');
+    let refineData = tweetData.reverse();
+    for (const tweetObj of refineData) {
       
       const newElement = createTweetElement(tweetObj);
 
@@ -53,6 +59,33 @@ $(function() {
   };
 
   
+
+
+
+  //fetching tweets function
+  function loadTweets() {
+
+
+    $.ajax({
+      url : 'http://localhost:8080/tweets',
+      method: 'GET'
+    
+    })
+      .done(function(result) {
+        renderTweets(result);
+      })
+      .fail(() =>
+        console.log("Bad request"))
+      .always(() => {
+        console.log('completed');
+      });
+
+  }
+  
+
+
+
+
 
   
   
@@ -71,16 +104,10 @@ $(function() {
         return;
       }
 
-      if(input.val() === null) {
-        alert('You can not submit null value')
+      if (input.val() === null) {
+        alert('You can not submit null value');
       }
-
-
-
-
-
-
-
+      // main function implemntion
 
       const formContent = $(this).serialize();
       
@@ -92,37 +119,23 @@ $(function() {
       })
         .done(function(result) {
           console.log(result);
+          input.val('');
+          $('.counter').val(140);
+          loadTweets();
         })
+          
+          
         .fail(() =>
           console.log("Bad request"))
         .always(() => {
+          
           console.log('completed');
         });
 
     });
+    
   }
   addTweetRequest();
-
-  //fetching tweets function
-  function loadTweets() {
-
-    $.ajax({
-      url : 'http://localhost:8080/tweets',
-      method: 'GET'
-      
-    })
-  
-
-      .done(function(result) {
-        renderTweets(result);
-      })
-      .fail(() =>
-        console.log("Bad request"))
-      .always(() => {
-        console.log('completed');
-      });
-
-  }
   loadTweets();
 
 });

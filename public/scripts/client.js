@@ -56,10 +56,32 @@ $(function() {
 
   
   
-  function  ajaxRequest() {
+  function  addTweetRequest() {
     // setting event handler to submit request
     $("form").on('submit', function(event) {
       event.preventDefault();
+      const input = $("textarea");
+      // checking tweet validation
+      if (input.val().length > 140) {
+        alert('Your tweet is too long');
+        return;
+      }
+      if (input.val() === "") {
+        alert('You can not submit empty form');
+        return;
+      }
+
+      if(input.val() === null) {
+        alert('You can not submit null value')
+      }
+
+
+
+
+
+
+
+
       const formContent = $(this).serialize();
       
       //making AJAX request
@@ -79,7 +101,7 @@ $(function() {
 
     });
   }
-  ajaxRequest();
+  addTweetRequest();
 
   //fetching tweets function
   function loadTweets() {
@@ -87,6 +109,7 @@ $(function() {
     $.ajax({
       url : 'http://localhost:8080/tweets',
       method: 'GET'
+      
     })
   
 

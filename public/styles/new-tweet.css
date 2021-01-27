@@ -54,11 +54,14 @@ hr{
   color: #4056A1;
   letter-spacing: 0.5ch;
   padding-left: 10px;
+  padding-right: 7px;
+
 }
 
 .time-ago {
   font-size: small;
 margin: 0%;
+padding-left: 7px;
 }
 
 .tweet-info{
@@ -71,9 +74,16 @@ margin: 0%;
 }
 
 #tweet:hover{
-  box-shadow: 0 0 11px grey;
-  
+  box-shadow: 10px 5px 5px rgb(39, 138, 195);
 
+}
+
+#tweet:hover .username {
+  visibility: visible;
+}
+#tweet:hover {
+  text-shadow: 0 1px 0 black;
+  
 }
 
 
@@ -88,15 +98,15 @@ header{
   padding-left: 5px;
   padding-right: 5px;
   
-
 }
+
 .image-name{
   padding: 2px;
   
 }
 
 .username{
-  
+  visibility: hidden;
   
 
 }

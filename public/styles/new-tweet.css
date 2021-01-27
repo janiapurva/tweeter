@@ -7,8 +7,14 @@
   
 }
 
+
+
 hr{
   border: 2px solid black;
+  width: 90%;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
 }
 
 .counter {
@@ -33,6 +39,7 @@ hr{
   width: 864px;
   height: 30px;
   font-size: inherit;
+  
 
 }
 .new-tweet {
@@ -42,3 +49,58 @@ hr{
 .minus-char{
   color: red;
 }
+
+.icons {
+  color: #4056A1;
+  letter-spacing: 0.5ch;
+  padding-left: 10px;
+}
+
+.time-ago {
+  font-size: small;
+margin: 0%;
+}
+
+.tweet-info{
+  text-align: center;
+}
+
+#tweet {
+  width: 100%;
+  border: 3px solid black;
+}
+
+#tweet:hover{
+  box-shadow: 0 0 11px grey;
+  
+
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 5px;
+  
+
+}
+.image-name{
+  padding: 2px;
+  
+}
+
+.username{
+  
+  
+
+}
+
+
+
+

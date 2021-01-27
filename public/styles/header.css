@@ -6,11 +6,12 @@ align-items: center;
 flex-direction: column;
 background-color: #0060c7;
 background-image: url(http://www.transparenttextures.com/patterns/white-paperboard.png);
+margin-top: 120px;
 
 }
 
 .name {
-  display: flex;
+display: flex;
 justify-content: center;
 align-items: center;
 align-self: flex-start;

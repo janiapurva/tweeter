@@ -7,33 +7,6 @@
 
 //Implementing dynamic tweet structure
 
-
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1611597538286
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1611683938286
-  }
-];
-
-
 $(function() {
 
   function createTweetElement(tweetObj) {
@@ -79,7 +52,7 @@ $(function() {
     }
   };
 
-  renderTweets(tweetData);
+  
 
   
   
@@ -107,6 +80,27 @@ $(function() {
     });
   }
   ajaxRequest();
+
+  //fetching tweets function
+  function loadTweets() {
+
+    $.ajax({
+      url : 'http://localhost:8080/tweets',
+      method: 'GET'
+    })
+  
+
+      .done(function(result) {
+        renderTweets(result);
+      })
+      .fail(() =>
+        console.log("Bad request"))
+      .always(() => {
+        console.log('completed');
+      });
+
+  }
+  loadTweets();
 
 });
 

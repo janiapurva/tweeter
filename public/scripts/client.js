@@ -31,7 +31,7 @@ const tweetData = [
     },
     "created_at": 1611683938286
   }
-]
+];
 
 
 $(function() {
@@ -80,6 +80,34 @@ $(function() {
   };
 
   renderTweets(tweetData);
+
+  
+  
+  function  ajaxRequest() {
+    // setting event handler to submit request
+    $("form").on('submit', function(event) {
+      event.preventDefault();
+      const formContent = $(this).serialize();
+      
+      //making AJAX request
+      $.ajax({
+        url : '/tweets',
+        method : "POST",
+        data: formContent
+      })
+        .done(function(result) {
+          console.log(result);
+        })
+        .fail(() =>
+          console.log("Bad request"))
+        .always(() => {
+          console.log('completed');
+        });
+
+    });
+  }
+  ajaxRequest();
+
 });
 
 

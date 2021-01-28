@@ -4,10 +4,7 @@
   color: #FFFFFF;
   font-size: 1em;
   font-size: medium;
-  
 }
-
-
 
 hr{
   border: 2px solid black;
@@ -17,18 +14,20 @@ hr{
   margin-bottom: 5px;
 }
 
+.first-line{
+  width: 100%;
+}
+
 .counter {
   display: flex;
   font-family: 'Bungee';
   font-size: large;
-
-  
-  
 }
 
 .buttonCount{
   display: flex;
   justify-content: space-between;
+ 
 }
 
 #tweet-text{
@@ -39,8 +38,6 @@ hr{
   width: 864px;
   height: 30px;
   font-size: inherit;
-  
-
 }
 .new-tweet {
   width: 100%;
@@ -55,11 +52,10 @@ hr{
   letter-spacing: 0.5ch;
   padding-left: 10px;
   padding-right: 7px;
-
 }
 
 .time-ago {
-  font-size: small;
+font-size: small;
 margin: 0%;
 padding-left: 7px;
 }
@@ -71,11 +67,11 @@ padding-left: 7px;
 #tweet {
   width: 100%;
   border: 3px solid black;
+  margin-bottom: 3px;
 }
 
 #tweet:hover{
   box-shadow: 10px 5px 5px rgb(39, 138, 195);
-
 }
 
 #tweet:hover .username {
@@ -83,7 +79,6 @@ padding-left: 7px;
 }
 #tweet:hover {
   text-shadow: 0 1px 0 black;
-  
 }
 
 
@@ -97,20 +92,40 @@ header{
   justify-content: space-between;
   padding-left: 5px;
   padding-right: 5px;
-  
 }
 
 .image-name{
   padding: 2px;
-  
 }
 
 .username{
   visibility: hidden;
-  
+}
+
+.profile-img{
+image-resolution: 1px;
+block-size: 23px;
 
 }
 
 
+
+
+#tweet:hover .profile-img{
+  image-resolution: 1px;
+  block-size: 30px;
+  
+  }
+
+.profile-name{
+  font-size: 15px;
+  padding-top: 0%;
+}
+
+
+.tweet-error {
+color: red;
+padding-bottom: 20px;
+}
 
 

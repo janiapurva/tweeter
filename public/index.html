@@ -33,71 +33,40 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-      <!--screen adjustment-->
-    <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
-
-   
-    
+      <!-- screen adjustment--> -->
+      <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
-
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="navbar">
       <span class="logo">tweeter</span>
       <span><strong>Write</strong> a new tweet</span>
-      
     </nav>
-    <header class="userProfile">
-      <div>
+      <header class="userProfile">
+        <div>
           <img class="profileImage" src="/images/profile-hex.png"> 
-          <h2 class="name">Your Name</h2>
-      </div>
-      
-  </header>
-
+          <h2 class="name">Marie Gold</h2>
+        </div> 
+      </header>
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
-          <label for="tweet-text">
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form method="POST" action="/tweets" class = "submit-tweet">
+            <label for="tweet-text">
               <textarea placeholder="What are you humming about ?" name="text" id="tweet-text"></textarea>
-          </label>
-          <hr>
-          <div class="buttonCount">
-            <button type="submit" class="tweetButton">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">
-              140
-            </output>
-          </div>
-        </form>
-        <article id ="tweet">
-          <header>
-            <div class = "image-name">
-            <img class= "profile-img" >&#128104;</img>
-            <span class = "profile-name">john</span>
+            </label>
+            <hr class="first-line">
+            <div class="buttonCount">
+              <button type="submit" class="tweetButton">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">
+                140
+              </output>
             </div>
-            <div class = "username">
-            <span >@apjasf</span>
-            </div>
-          </header>
-          <div class="tweeet-content">
-            <p class = "tweet-info">This is a tweet</p>
-            <hr class="line-two">
-          </div>
-          <footer>
-            <div class="time-ago">
-              <p> 1 minute ago </p>
-            </div>
-            <div class = "icons">
-              <i style="font-size:24px" class="fa">&#xf11d;</i>
-              <i style="font-size:24px" class="fa">&#xf004;</i>
-              <i style="font-size:24px" class="fa">&#xf079;</i>
-              </div>
-
-          </footer>
+          </form>
+        <article id ="tweet-insert">
         </article>
-      </he>
+      </section>
     </main>
   </body>
 </html>

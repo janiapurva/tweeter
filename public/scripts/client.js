@@ -60,7 +60,7 @@ $(function() {
       const newElement = createTweetElement(tweetObj);
 
       // calls createTweetElement for each tweet
-      $('#tweet').append(newElement);
+      $('#tweet-insert').append(newElement);
     }
   };
 
@@ -100,7 +100,6 @@ $(function() {
     $("form").on('submit', function(event) {
       event.preventDefault();
       const input = $("textarea");
-      const safeText = escape(input.val());
       // checking tweet validation
       if (input.val().length > 140) {
         
@@ -140,7 +139,6 @@ $(function() {
         .fail(() =>
           console.log("Bad request"))
         .always(() => {
-          
           console.log('completed');
         });
 

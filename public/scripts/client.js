@@ -19,6 +19,7 @@ $(function() {
     const date = new Date(tweetObj.created_at);
     const day = (Date.now() - date) / 1000 / 60 / 60 / 24;
     const result = Math.floor(day);
+    const safeText = escape(tweetObj.content.text);
     const article = `
    <article id ="tweet">
           <header>
@@ -31,12 +32,11 @@ $(function() {
             </div>
           </header>
           <div class="tweeet-content">
-            <p class = "tweet-info">${tweetObj.content.text}</p>
+            <p class = "tweet-info">${safeText}</p>
             <hr class="line-two">
           </div>
           <footer>
             <div class="time-ago">
-
               <p> ${result} Days ago </p>
             </div>
             <div class = "icons">
@@ -105,7 +105,6 @@ $(function() {
       if (input.val().length > 140) {
         
         $(".submit-tweet").prepend($("<span>").addClass("tweet-error").text("Please keep character below 140").fadeIn(300).fadeOut(5500));
-
         return;
       }
       if (input.val() === "") {
@@ -119,6 +118,7 @@ $(function() {
       // main function implemntion
 
       const formContent = $(this).serialize();
+
       
       
       

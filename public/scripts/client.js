@@ -9,6 +9,12 @@
 
 $(function() {
 
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   function createTweetElement(tweetObj) {
     const date = new Date(tweetObj.created_at);
     const day = (Date.now() - date) / 1000 / 60 / 60 / 24;
@@ -47,7 +53,7 @@ $(function() {
 
   const renderTweets = function(tweetData) {
   // loops through tweets
-  $('#tweet').html('');
+    $('#tweet').html('');
     let refineData = tweetData.reverse();
     for (const tweetObj of refineData) {
       
@@ -94,22 +100,28 @@ $(function() {
     $("form").on('submit', function(event) {
       event.preventDefault();
       const input = $("textarea");
+      const safeText = escape(input.val());
       // checking tweet validation
       if (input.val().length > 140) {
-        alert('Your tweet is too long');
+        
+        $(".submit-tweet").prepend($("<span>").addClass("tweet-error").text("Please keep character below 140").fadeIn(300).fadeOut(5500));
+
         return;
       }
       if (input.val() === "") {
-        alert('You can not submit empty form');
+        $(".submit-tweet").prepend($("<span>").addClass("tweet-error").text("We are sorry We didn't get that").fadeIn(300).fadeOut(5500));
         return;
       }
 
       if (input.val() === null) {
-        alert('You can not submit null value');
+        $(".submit-tweet").prepend($("<span>").addClass("tweet-error").text("Please fill tweet area").fadeIn(300).fadeOut(5500));
       }
       // main function implemntion
 
       const formContent = $(this).serialize();
+      
+      
+      
       
       //making AJAX request
       $.ajax({

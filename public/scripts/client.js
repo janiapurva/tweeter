@@ -21,7 +21,7 @@ $(function() {
     const result = Math.floor(day);
     const safeText = escape(tweetObj.content.text);
     const article = `
-   <article id ="tweet">
+  <article id ="tweet">
           <header>
             <div class = "image-name">
             <img class = "profile-img" src=${tweetObj.user.avatars} alt="avatars" >

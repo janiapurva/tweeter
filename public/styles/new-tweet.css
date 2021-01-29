@@ -105,11 +105,7 @@ header{
 .profile-img{
 image-resolution: 1px;
 block-size: 23px;
-
 }
-
-
-
 
 #tweet:hover .profile-img{
   image-resolution: 1px;
@@ -127,9 +123,6 @@ block-size: 23px;
 color: red;
 padding-bottom: 20px;
 }
-
-
-
 
 #top-button {
   display: inline-block;

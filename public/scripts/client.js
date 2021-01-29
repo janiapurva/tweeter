@@ -9,6 +9,36 @@
 
 $(function() {
 
+
+
+  function timeSince(date) {
+
+    //date generator function
+    let seconds = Math.floor((new Date() - date) / 1000);
+    let interval = Math.floor(seconds / 31536000);
+    if (interval > 1) {
+      return interval + " years";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+      return interval + " months";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+      return interval + " days";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+      return interval + " hours";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+      return interval + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
+  }
+
+
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -16,9 +46,7 @@ $(function() {
   };
 
   function createTweetElement(tweetObj) {
-    const date = new Date(tweetObj.created_at);
-    const day = (Date.now() - date) / 1000 / 60 / 60 / 24;
-    const result = Math.floor(day);
+    const result = timeSince(tweetObj.created_at);
     const safeText = escape(tweetObj.content.text);
     const article = `
   <article id ="tweet">
@@ -37,7 +65,7 @@ $(function() {
           </div>
           <footer>
             <div class="time-ago">
-              <p> ${result} Days ago </p>
+              <p> ${result}</p>
             </div>
             <div class = "icons">
               <i style="font-size:24px" class="fa">&#xf11d;</i>
@@ -50,17 +78,17 @@ $(function() {
     return article;
   }
 
-
+// Inserting tweet element
   const renderTweets = function(tweetData) {
   // loops through tweets
     $('#tweet').html('');
-    let refineData = tweetData.reverse();
-    for (const tweetObj of refineData) {
+    
+    for (const tweetObj of tweetData) {
       
       const newElement = createTweetElement(tweetObj);
 
       // calls createTweetElement for each tweet
-      $('#tweet-insert').append(newElement);
+      $('#tweet-insert').prepend(newElement);
     }
   };
 
@@ -79,10 +107,11 @@ $(function() {
         renderTweets(result);
       })
       .fail(() =>
-        console.log("Bad request"))
-      .always(() => {
-        console.log('completed');
-      });
+        console.log("Bad request")
+      )
+      .always(() =>
+        console.log('completed')
+      );
   }
   
   // writing tweet an adding to database
@@ -108,6 +137,7 @@ $(function() {
       // main function implemntion
 
       const formContent = $(this).serialize();
+      
  
       //making AJAX request
       $.ajax({
@@ -121,12 +151,11 @@ $(function() {
           $('.counter').val(140);
           loadTweets();
         })
-      
         .fail(() =>
           console.log("Bad request"))
-        .always(() => {
-          console.log('completed');
-        });
+        .always(() =>
+          console.log("completed")
+        );
     });
     
   }
@@ -143,7 +172,7 @@ $(document).ready(function() {
   
 
   $(window).scroll(function() {
-    if ($(window).scrollTop() > 400) {
+    if ($(window).scrollTop() > 50) {
       btn.addClass('show');
     } else {
       btn.removeClass('show');
@@ -152,7 +181,7 @@ $(document).ready(function() {
 
   btn.on('click', function(e) {
     e.preventDefault();
-    $('html, body').animate({scrollTop:0}, '400');
+    $('html, body').animate({scrollTop:0}, '50');
   });
 
 });

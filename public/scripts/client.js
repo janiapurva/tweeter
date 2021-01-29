@@ -70,8 +70,6 @@ $(function() {
 
   //fetching tweets function
   function loadTweets() {
-
-
     $.ajax({
       url : 'http://localhost:8080/tweets',
       method: 'GET'
@@ -85,16 +83,9 @@ $(function() {
       .always(() => {
         console.log('completed');
       });
-
   }
   
-
-
-
-
-
-  
-  
+  // writing tweet an adding to database
   function  addTweetRequest() {
     // setting event handler to submit request
     $("form").on('submit', function(event) {
@@ -117,11 +108,7 @@ $(function() {
       // main function implemntion
 
       const formContent = $(this).serialize();
-
-      
-      
-      
-      
+ 
       //making AJAX request
       $.ajax({
         url : '/tweets',
@@ -134,14 +121,12 @@ $(function() {
           $('.counter').val(140);
           loadTweets();
         })
-          
-          
+      
         .fail(() =>
           console.log("Bad request"))
         .always(() => {
           console.log('completed');
         });
-
     });
     
   }
@@ -149,5 +134,28 @@ $(function() {
   loadTweets();
 
 });
+
+
+$(document).ready(function() {
+  
+  let btn = $('#top-button');
+
+  
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 400) {
+      btn.addClass('show');
+    } else {
+      btn.removeClass('show');
+    }
+  });
+
+  btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '400');
+  });
+
+});
+
 
 

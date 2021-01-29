@@ -18,16 +18,13 @@ margin-top: 0px;
 color: white;
 }
 
-
-
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 760px) {
 
   body {
     display: flex;
     flex-direction: row;
     
   }
-  
 
   .container{
     height: 90%;
@@ -36,17 +33,19 @@ color: white;
     padding-top: 15%;
     padding-right: 5%;
   }
+
   .userProfile {
     width: 30%;
     height: 20%;
     float: left;
     align-self: center;
-    
-    
-
-    
-    
-    
   }
   
 }
+
+
+
+
+
+
+

@@ -78,15 +78,13 @@ $(function() {
     return article;
   }
 
-// Inserting tweet element
+  // Inserting tweet element
   const renderTweets = function(tweetData) {
   // loops through tweets
     $('#tweet').html('');
     
     for (const tweetObj of tweetData) {
-      
       const newElement = createTweetElement(tweetObj);
-
       // calls createTweetElement for each tweet
       $('#tweet-insert').prepend(newElement);
     }
@@ -107,9 +105,12 @@ $(function() {
         renderTweets(result);
       })
       .fail(() =>
+      //please dont't remove this console log its breaking code
         console.log("Bad request")
       )
       .always(() =>
+      //please dont't remove this console log its breaking code
+
         console.log('completed')
       );
   }
@@ -135,7 +136,6 @@ $(function() {
         $(".submit-tweet").prepend($("<span>").addClass("tweet-error").text("Please fill tweet area").fadeIn(300).fadeOut(5500));
       }
       // main function implemntion
-
       const formContent = $(this).serialize();
       
  
@@ -146,14 +146,20 @@ $(function() {
         data: formContent
       })
         .done(function(result) {
+          //please dont't remove this console log its breaking code
+
           console.log(result);
           input.val('');
           $('.counter').val(140);
           loadTweets();
         })
         .fail(() =>
+        //please dont't remove this console log its breaking code
+
           console.log("Bad request"))
         .always(() =>
+        //please dont't remove this console log its breaking code
+
           console.log("completed")
         );
     });

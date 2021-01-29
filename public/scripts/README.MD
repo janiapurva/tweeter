@@ -11,14 +11,14 @@ The client-side is built by implementing the HTML, CSS and client-side JS.
 
 
 ### Home Page
-!["Login Page"](doc/Home.png)
+!["Login Page"](https://github.com/janiapurva/tweeter/blob/master/doc/Home.png?raw=true)
 
 
 ### Responsive UI Page
-!["Register"](./doc/Responsive.png)
+!["Register"](https://github.com/janiapurva/tweeter/blob/master/doc/Responsive.png?raw=true)
 
 ### Error null input
-!["Login Home"](./doc/error.png)
+!["Login Home"](https://github.com/janiapurva/tweeter/blob/master/doc/Error.png?raw=true)
 
 
 

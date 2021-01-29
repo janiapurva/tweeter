@@ -1,17 +1,40 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+A simple single-page AJAX-based Twitter clone built using HTML, CSS, JS, jQuery and AJAX on the front-end, and Node, Express and MongoDB on the back-end.User can post tweet and also refetch from server.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+# Technical Approach & Objectives
+The server is built with Node and Express and allows users to request and submit tweets via a JSON end-point.
 
-## Getting Started
+The client-side is built by implementing the HTML, CSS and client-side JS.
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+## Final Product
+
+
+### Home Page
+!["Login Page"]('https://github.com/janiapurva/tweeter/blob/master/doc/Home.png')
+
+
+
+### Responsive UI Page
+!["Register"]('https://github.com/janiapurva/tweeter/blob/master/doc/Responsive.png')
+
+### Error null input
+!["Login Home"]('https://github.com/janiapurva/tweeter/blob/master/doc/Error.png')
+
+
+
+
+
 
 ## Dependencies
 
 - Express
-- Node 5.10.x or above
+-Node 5.10.x or above
+-JQuery.
+
+## Getting Started
+
+Fork and clone your fork of this repository.
+Install dependencies: npm install or npm i for short.
+Start the web server from the command line: npm run local
+Open the app on http://localhost:8080/ and make sure that it's loading.

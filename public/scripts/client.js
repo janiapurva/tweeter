@@ -138,7 +138,6 @@ $(function() {
       // main function implemntion
       const formContent = $(this).serialize();
       
- 
       //making AJAX request
       $.ajax({
         url : '/tweets',

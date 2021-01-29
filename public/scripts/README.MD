@@ -10,20 +10,17 @@ The client-side is built by implementing the HTML, CSS and client-side JS.
 ## Final Product
 
 
-### Login Page
-!["Login Page"](./doc/login.jpg)
+### Home Page
+!["Login Page"](doc/Home.png)
 
-### Register Page
-!["Register"](./doc/register.jpg)
 
-### Login Home
-!["Login Home"](./doc/loginHome.jpg)
+### Responsive UI Page
+!["Register"](./doc/Responsive.png)
 
-### Edit URL Page
-!["Edit URL page"](./doc/editPage.jpg)
+### Error null input
+!["Login Home"](./doc/error.png)
 
-### My URL
-!["My URL"](./doc/stored.jpg)
+
 
 
 

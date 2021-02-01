@@ -8,11 +8,8 @@
 //Implementing dynamic tweet structure
 
 $(function() {
-
-
-
+  
   function timeSince(date) {
-
     //date generator function
     let seconds = Math.floor((new Date() - date) / 1000);
     let interval = Math.floor(seconds / 31536000);
@@ -91,15 +88,11 @@ $(function() {
   };
 
   
-
-
-
   //fetching tweets function
   function loadTweets() {
     $.ajax({
       url : 'http://localhost:8080/tweets',
       method: 'GET'
-    
     })
       .done(function(result) {
         renderTweets(result);
@@ -123,7 +116,6 @@ $(function() {
       const input = $("textarea");
       // checking tweet validation
       if (input.val().length > 140) {
-        
         $(".submit-tweet").prepend($("<span>").addClass("tweet-error").text("Please keep character below 140").fadeIn(300).fadeOut(5500));
         return;
       }
@@ -146,7 +138,6 @@ $(function() {
       })
         .done(function(result) {
           //please dont't remove this console log its breaking code
-
           console.log(result);
           input.val('');
           $('.counter').val(140);
@@ -154,11 +145,9 @@ $(function() {
         })
         .fail(() =>
         //please dont't remove this console log its breaking code
-
           console.log("Bad request"))
         .always(() =>
         //please dont't remove this console log its breaking code
-
           console.log("completed")
         );
     });
